@@ -15,20 +15,25 @@ int main() {
 
 int get_day (int num1, int num2) {
     int cnt = 0;
-    if (num1 == 1 || num1 == 3 || num1 == 5 || num1 == 7 || num1 == 8 || num1 == 10 || num1 == 12) {
-        if (num2 <= 31) {
-            cnt = 1;
+    if (num1 <= 12) {
+        if (num1 == 1 || num1 == 3 || num1 == 5 || num1 == 7 || num1 == 8 || num1 == 10 || num1 == 12) {
+            if (num2 <= 31) {
+                cnt = 1;
+            }
         }
-    }
-    else if (num1 == 2) {
-        if (num2 <= 28) {
-            cnt += 1;
+        else if (num1 == 2) {
+            if (num2 <= 28) {
+                cnt += 1;
+            }
+        }   
+        else {
+            if (num2 <= 30) {
+                cnt += 1;
+            }
         }
     }
     else {
-        if (num2 <= 30) {
-            cnt += 1;
-        }
+        cnt = 0;
     }
     return cnt;
 }
